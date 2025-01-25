@@ -35,6 +35,9 @@
             button2 = new Button();
             textBox1 = new TextBox();
             checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
+            checkBox6 = new CheckBox();
             SuspendLayout();
             // 
             // button1
@@ -50,6 +53,8 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
             checkBox1.Location = new Point(179, 59);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(192, 19);
@@ -61,11 +66,13 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
+            checkBox2.Checked = true;
+            checkBox2.CheckState = CheckState.Checked;
             checkBox2.Location = new Point(178, 85);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(193, 19);
+            checkBox2.Size = new Size(179, 19);
             checkBox2.TabIndex = 2;
-            checkBox2.Text = "Delete (db\\[minute&&day&&tick])";
+            checkBox2.Text = "Delete (db\\[minute day tick])";
             checkBox2.UseVisualStyleBackColor = true;
             checkBox2.CheckedChanged += CheckBox2_CheckedChanged;
             // 
@@ -91,11 +98,48 @@
             checkBox3.AutoSize = true;
             checkBox3.Location = new Point(179, 110);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(115, 19);
+            checkBox3.Size = new Size(159, 19);
             checkBox3.TabIndex = 6;
-            checkBox3.Text = "Delete Replay DB";
+            checkBox3.Text = "Delete Replay (db\\replay)";
             checkBox3.UseVisualStyleBackColor = true;
             checkBox3.CheckedChanged += CheckBox3_CheckedChanged;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Checked = true;
+            checkBox4.CheckState = CheckState.Checked;
+            checkBox4.Location = new Point(179, 135);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(82, 19);
+            checkBox4.TabIndex = 7;
+            checkBox4.Text = "Delete Log";
+            checkBox4.UseVisualStyleBackColor = true;
+            checkBox4.CheckedChanged += checkBox4_CheckedChanged;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Checked = true;
+            checkBox5.CheckState = CheckState.Checked;
+            checkBox5.Location = new Point(177, 161);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(84, 19);
+            checkBox5.TabIndex = 8;
+            checkBox5.Text = "Delete tmp";
+            checkBox5.UseVisualStyleBackColor = true;
+            checkBox5.CheckedChanged += checkBox5_CheckedChanged;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(175, 185);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(199, 19);
+            checkBox6.TabIndex = 9;
+            checkBox6.Text = "Delete DB (db\\NinjaTrader.sqlite)";
+            checkBox6.UseVisualStyleBackColor = true;
+            checkBox6.CheckedChanged += checkBox6_CheckedChanged;
             // 
             // Form1
             // 
@@ -103,6 +147,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkBox6);
+            Controls.Add(checkBox5);
+            Controls.Add(checkBox4);
             Controls.Add(checkBox3);
             Controls.Add(textBox1);
             Controls.Add(button2);
@@ -128,5 +175,8 @@
         private Button button2;
         private TextBox textBox1;
         private CheckBox checkBox3;
+        private CheckBox checkBox4;
+        private CheckBox checkBox5;
+        private CheckBox checkBox6;
     }
 }
