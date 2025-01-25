@@ -116,12 +116,9 @@ namespace NinjaTraderCleanUpTool
 
             // Refresh the UI if necessary
             Application.DoEvents();
-
-
-            //string ninjaExe = "C:\\Windows\\System32\\notepad.exe";
-            //string ninjaExe = "C:\\Program Files\\NinjaTrader 8\\bin\\NinjaTrader.exe";
-            //Process.Start(ninjaExe);
-            //Application.Exit();
+            string ninjaExe = "C:\\Program Files\\NinjaTrader 8\\bin\\NinjaTrader.exe";
+            Process.Start(ninjaExe);
+            Application.Exit();
 
         }
 
