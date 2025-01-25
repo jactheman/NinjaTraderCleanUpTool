@@ -42,9 +42,10 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Location = new Point(179, 376);
             button1.Name = "button1";
-            button1.Size = new Size(226, 24);
+            button1.Size = new Size(229, 45);
             button1.TabIndex = 0;
             button1.Text = "Run NinjaTrader Cleanup";
             button1.UseVisualStyleBackColor = true;
@@ -82,7 +83,7 @@
             button2.Name = "button2";
             button2.Size = new Size(127, 23);
             button2.TabIndex = 4;
-            button2.Text = "NinjaDirectory";
+            button2.Text = "NT Directory";
             button2.UseVisualStyleBackColor = true;
             button2.Click += Button2_Click;
             // 
@@ -133,19 +134,22 @@
             // checkBox6
             // 
             checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(175, 185);
+            checkBox6.BackColor = SystemColors.ActiveCaption;
+            checkBox6.ForeColor = Color.Black;
+            checkBox6.ImageAlign = ContentAlignment.MiddleLeft;
+            checkBox6.Location = new Point(179, 186);
             checkBox6.Name = "checkBox6";
             checkBox6.Size = new Size(199, 19);
             checkBox6.TabIndex = 9;
             checkBox6.Text = "Delete DB (db\\NinjaTrader.sqlite)";
-            checkBox6.UseVisualStyleBackColor = true;
+            checkBox6.UseVisualStyleBackColor = false;
             checkBox6.CheckedChanged += checkBox6_CheckedChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonShadow;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(checkBox6);
             Controls.Add(checkBox5);
@@ -156,8 +160,9 @@
             Controls.Add(checkBox2);
             Controls.Add(checkBox1);
             Controls.Add(button1);
+            ForeColor = SystemColors.ActiveCaptionText;
             Name = "Form1";
-            Text = "Form1";
+            Text = "NinjaTrader Cleanup Tool";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

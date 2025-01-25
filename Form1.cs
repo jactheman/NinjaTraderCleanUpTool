@@ -32,7 +32,7 @@ namespace NinjaTraderCleanUpTool
                 // Get the path of selected folder
                 string selectedFolderPath = folderBrowserDialog1.SelectedPath;
                 ninjaDirectory = selectedFolderPath;
-                sqlFilePath = String.Concat(ninjaDirectory, "\\", "db\\NinjaTrader.txt");
+                sqlFilePath = String.Concat(ninjaDirectory, "\\", "db\\NinjaTrader.sqlite");
                 textBox1.Text = ninjaDirectory;
 
                 // Do something with the selected path, for example:
@@ -76,12 +76,10 @@ namespace NinjaTraderCleanUpTool
             if (deleteDatabaseSQL)
             {
 
-                MessageBox.Show("Yes please delete db" + sqlFilePath);
                 string actualPath = Path.GetFullPath(sqlFilePath);
 
                 if (File.Exists(actualPath))
                 {
-                    MessageBox.Show("Selected folder: " + actualPath);
                     File.Delete(actualPath);
                 }
             }
