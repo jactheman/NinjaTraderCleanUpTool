@@ -9,4 +9,6 @@ Clean up tool for NinjaTrader
   * Log data
   * NinjaTrader.sqlite database
 
+![Cleanup Tool for NinjaTrader](/images/CleanUPTOOL_for_NT.png)
+
 
