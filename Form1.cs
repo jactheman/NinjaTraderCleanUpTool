@@ -13,13 +13,15 @@ namespace NinjaTraderCleanUpTool
         private bool deleteTemp = true;//Because Default set to checked
         private bool deleteDatabaseSQL = false;
         private string ninjaDirectory;
+        private string ninjaExe = "C:\\Program Files\\NinjaTrader 8\\bin\\NinjaTrader.exe";
+
 
         public Form1()
         {
             InitializeComponent();
-
             ninjaDirectory = String.Concat(userProfilePath, "\\", "Documents\\NinjaTrader 8\\");
             sqlFilePath = String.Concat(ninjaDirectory, "\\", "db\\NinjaTrader.sqlite");
+
             textBox1.Text = ninjaDirectory;
 
 
@@ -57,31 +59,20 @@ namespace NinjaTraderCleanUpTool
                 directories.Add(String.Concat(ninjaDirectory, "\\", "db\\minute"));
                 directories.Add(String.Concat(ninjaDirectory, "\\", "db\\day"));
                 directories.Add(String.Concat(ninjaDirectory, "\\", "db\\tick"));
+            }
+            if (deleteLog) directories.Add(String.Concat(ninjaDirectory, "\\", "log"));
 
-
-            }
-            if (deleteLog)
-            {
-                directories.Add(String.Concat(ninjaDirectory, "\\", "log"));
-            }
-            if (deleteTemp)
-            {
-                directories.Add(String.Concat(ninjaDirectory, "\\", "tmp"));
-            }
-            if (deleteDB_Replay)
-            {
-                directories.Add(String.Concat(ninjaDirectory, "\\", "db\\replay"));
-            }
+            if (deleteTemp) directories.Add(String.Concat(ninjaDirectory, "\\", "tmp"));
+         
+            if (deleteDB_Replay) directories.Add(String.Concat(ninjaDirectory, "\\", "db\\replay"));
+            
 
             if (deleteDatabaseSQL)
             {
-
                 string actualPath = Path.GetFullPath(sqlFilePath);
 
-                if (File.Exists(actualPath))
-                {
-                    File.Delete(actualPath);
-                }
+                if (File.Exists(actualPath)) File.Delete(actualPath);
+                
             }
 
 
@@ -114,7 +105,6 @@ namespace NinjaTraderCleanUpTool
 
             // Refresh the UI if necessary
             Application.DoEvents();
-            string ninjaExe = "C:\\Program Files\\NinjaTrader 8\\bin\\NinjaTrader.exe";
             Process.Start(ninjaExe);
             Application.Exit();
 
