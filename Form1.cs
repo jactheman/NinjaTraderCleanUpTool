@@ -19,7 +19,7 @@ namespace NinjaTraderCleanUpTool
             InitializeComponent();
 
             ninjaDirectory = String.Concat(userProfilePath, "\\", "Documents\\NinjaTrader 8\\");
-            sqlFilePath = String.Concat(ninjaDirectory, "\\", "db\\NinjaTrader.txt");
+            sqlFilePath = String.Concat(ninjaDirectory, "\\", "db\\NinjaTrader.sqlite");
             textBox1.Text = ninjaDirectory;
 
 
